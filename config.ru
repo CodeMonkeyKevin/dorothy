@@ -2,8 +2,6 @@ require "rubygems"
 require "bundler"
 Bundler.setup
 
-require 'toto'
-
 # Rack config
 use Rack::Static, :urls => ['/css', '/js', '/images', '/favicon.ico'], :root => 'public'
 use Rack::CommonLogger
@@ -20,7 +18,7 @@ toto = Toto::Server.new do
   # Add your settings here
   # set [:setting], [value]
   # 
-  # set :author,    ENV['USER']                               # blog author
+  set :author,    "Kevin"                               # blog author
   # set :title,     Dir.pwd.split('/').last                   # site title
   # set :root,      "index"                                   # page to load on /
   # set :date,      lambda {|now| now.strftime("%d/%m/%Y") }  # date format for articles
@@ -34,5 +32,3 @@ toto = Toto::Server.new do
 end
 
 run toto
-
-
